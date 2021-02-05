@@ -13,7 +13,11 @@ export default class ContactPage extends React.Component {
                         <FontAwesomeIcon icon={ faPhone } /> Contact details
                         </Card.Title>
                         <Card.Text>
-                            Contact details will be show here...
+                            Online Prodavnica Racunara i Telefona <br />
+                            Telefon: +381641546872 <br />
+                            Adresa: Majakovskog 24 <br />
+                            Mesto: Nis
+                            
                         </Card.Text>
                     </Card.Body>
                 </Card>

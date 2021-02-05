@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CategoryType from '../../types/CategoryType';
 import { Link, Redirect } from 'react-router-dom';
 import api, { ApiResponse } from '../../api/api';
+import logo from './home.jpg';
 
 interface HomePageState {
     isUserLoggedIn: boolean;
@@ -38,7 +39,7 @@ class HomePage extends React.Component {
     }
 
     private getCategories() {
-        api('api/category/', 'get', {})
+        api('api/category/?filter=parentCategoryId||$isnull', 'get', {})
         .then((res: ApiResponse) => {
             if(res.status === "error" || res.status === "login") {
                 this.setLogginState(false);
@@ -105,6 +106,10 @@ class HomePage extends React.Component {
             <Col lg="3" md="4" sm="6" xs="12" >
                 <Card className="mb-3">
                     <Card.Body>
+                    
+                    <Card.Header>
+                        <img src={logo} className="w-100"/>
+                    </Card.Header>
                     <Card.Title>
                         { category.name }
                     </Card.Title>
