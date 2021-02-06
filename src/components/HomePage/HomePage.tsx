@@ -6,6 +6,7 @@ import CategoryType from '../../types/CategoryType';
 import { Link, Redirect } from 'react-router-dom';
 import api, { ApiResponse } from '../../api/api';
 import logo from './home.jpg';
+import pozadina from './pozadina.jpg';
 
 interface HomePageState {
     isUserLoggedIn: boolean;
@@ -87,11 +88,12 @@ class HomePage extends React.Component {
             <Container>
                 <Card>
                     <Card.Body>
-                        <Card.Title>
+                        <img src={pozadina} className="w-100" />
+                        <Card.Title style={ { width:'100%', textAlign: 'center' } }>
                             <FontAwesomeIcon icon={ faListAlt } /> Top level categories
                         </Card.Title>
 
-                        <Row>
+                        <Row style={ { flex: 1, justifyContent: "center", alignItems: "center" } }>
                             { this.state.categories.map(this.singleCategory) }
                         </Row>
                     </Card.Body>
